@@ -9,7 +9,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Smooth Page Scroll Up/Down Buttons adds buttons to your page that will enable visitors of your site to easily (and smoothly) scroll up or down exactly one screen/page at a time.
+Smooth Page Scroll Up/Down Buttons adds buttons that enables your site visitors to easily scroll up or down one screen/page at a time.
 
 
 == Description ==
