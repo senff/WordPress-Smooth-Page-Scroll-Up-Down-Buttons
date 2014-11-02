@@ -13,13 +13,14 @@
  	padding:0;
  	transition:opacity 0.2s linear;
  	text-indent:-99999px;
+ 	cursor:pointer;
  }
 
 .page-scroll-buttons button.one-page-down {background-position:-45px 0;}
 .page-scroll-buttons button.one-page-up {background-position:0 0;}
 .page-scroll-buttons button.all-the-way-to-top {background-position:-90px 0;}
 
- .page-scroll-buttons .not-functional {
+ .page-scroll-buttons button.not-functional {
  	cursor:default;
  }
 
