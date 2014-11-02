@@ -1,0 +1,44 @@
+
+ .page-scroll-buttons button,
+ .page-scroll-buttons button:hover,
+ .page-scroll-buttons button:focus {
+ 	position:fixed;
+ 	z-index:100;
+ 	width:45px;
+ 	height:45px;
+ 	background:url('../img/spsb-sprite.png');
+ 	border:0;
+ 	border-radius:4px;
+ 	margin:0;
+ 	padding:0;
+ 	transition:opacity 0.2s linear;
+ 	text-indent:-99999px;
+ }
+
+.page-scroll-buttons button.one-page-down {background-position:-45px 0;}
+.page-scroll-buttons button.one-page-up {background-position:0 0;}
+.page-scroll-buttons button.all-the-way-to-top {background-position:-90px 0;}
+
+ .page-scroll-buttons .not-functional {
+ 	cursor:default;
+ }
+
+ .no-top .all-the-way-to-top {
+ 	display:none;
+ }
+ 
+/* Position style 0: UP and DOWN on top of eachother at bottom right */
+	.position-style-0 button.one-page-down {bottom:10px; right:10px;}
+	.position-style-0 button.one-page-up {bottom:60px; right:10px;}
+	.position-style-0 button.all-the-way-to-top {bottom:120px; right:10px;}
+
+/* Position style 1: UP and DOWN next to eachother at bottom right */
+	.position-style-1 button.one-page-down {bottom:10px; right:10px;}
+	.position-style-1 button.one-page-up {bottom:10px; right:60px;}
+	.position-style-1 button.all-the-way-to-top {bottom:80px; right:10px;}
+
+/* Position style 2: UP and DOWN at right in corners of screen */
+	.position-style-2 button.one-page-down {bottom:10px; right:10px;}
+	.position-style-2 button.one-page-up {top:10px; right:10px;}
+	.position-style-2 button.all-the-way-to-top {top:10px; right:80px;}
+

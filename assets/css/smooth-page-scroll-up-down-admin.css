@@ -1,0 +1,37 @@
+.positioning-buttons {
+
+}
+.positioning-buttons .positioning-option {
+	overflow:hidden;
+	padding:10px;
+	float:left;
+	border:solid 1px transparent;
+}
+
+.positioning-buttons .selected {
+	border:solid 1px #c0c0c0;
+	background:#f0f0f0;
+	border-radius:5px;
+}
+
+.positioning-buttons input[type=radio], .positioning-buttons label {
+	float:left;
+}
+
+.positioning-buttons input[type=radio] {
+	margin:3px 10px 0 0;
+}
+
+.positioning-buttons label {
+	width:125px;
+	height:100px;
+	background:url('../img/spsb-sprite.png');
+}
+
+.positioning-buttons label#pos-0 {background-position:0 -45px;}
+.positioning-buttons label#pos-1 {background-position:-125px -45px;}
+.positioning-buttons label#pos-2 {background-position:-250px -45px;}
+
+.with-top-button label#pos-0 {background-position:0 -145px;}
+.with-top-button label#pos-1 {background-position:-125px -145px;}
+.with-top-button label#pos-2 {background-position:-250px -145px;}
