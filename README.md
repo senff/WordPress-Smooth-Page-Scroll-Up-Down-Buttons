@@ -9,13 +9,13 @@
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Smooth Page Scroll Up/Down Buttons adds buttons to your page that will enable visitors of your site to easily (and smoothly) scroll up or down exactly one page at a time.
+Smooth Page Scroll Up/Down Buttons adds buttons to your page that will enable visitors of your site to easily (and smoothly) scroll up or down exactly one screen/page at a time.
 
 ## Description
 
 ### Summary
 
-The Smooth Page Scroll Up/Down Buttons plugin for WordPress adds buttons to every page of your site, that can be used to (smoothly) scroll up or down exactly one page at a time. This can be particularly handy for pages with a lot of text/content, or in cases wherever a browser's scrollbar is just not good enough (or not present at all, like on tablets) to enable one-click, one-page scrolling.
+The Smooth Page Scroll Up/Down Buttons plugin for WordPress adds buttons to every page of your site, that can be used to (smoothly) scroll up or down exactly one screen/page at a time. This can be particularly handy for pages with a lot of text/content, or in cases wherever a browser's scrollbar is just not good enough (or not present at all, like on tablets) to enable one-click, one-screen scrolling.
 
 BONUS BUTTON! Optionally, you can add a "Back to top" button, that will take the visitor right back to the very top of the page.
 
