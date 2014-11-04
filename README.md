@@ -29,7 +29,7 @@ No knowledge of any coding (HTML, CSS, JavaScript, PHP) is required at all.
 
 ## Installation 
 
-1. Upload the "smooth-page-scroll-up-down-buttons" directory to your "wp-content/plugins" directory.
+1. Upload the "smooth-page-scroll-updown-buttons" directory to your "wp-content/plugins" directory.
 2. In your WordPress admin, go to PLUGINS and activate "Smooth Page Scroll Up/Down Buttons"
 3. Go to SETTINGS - SMOOTH PAGE SCROLL UP/DOWN BUTTONS
 4. Choose the layout (where you want the buttons to appear) and the scroll speed
@@ -43,12 +43,12 @@ The plugin comes with only one set of buttons. A future version may include more
 From my own experience, the three options you have are the most common ones that people use. If, however, there is another layout that you think could be useful, please let me know and I might add it in a future update.
 
 ### It's not working. What could be wrong?
-As with every plugin, it's possible that things don't work. The most common reason for this is that the plugin has a conflict with another plugin you're using. It's impossible to tell what could be wrong exactly, but if you post a support request in the plugin's [support forum](https://wordpress.org/support/plugin/smooth-page-scroll-up-down-buttons) on WordPress.org, I'd be happy to give it a look and try to help out. Please include as much information as possible, including a link to your site where the problem can be seen.
+As with every plugin, it's possible that things don't work. The most common reason for this is that the plugin has a conflict with another plugin you're using. It's impossible to tell what could be wrong exactly, but if you post a support request in the plugin's [support forum](https://wordpress.org/support/plugin/smooth-page-scroll-updown-buttons) on WordPress.org, I'd be happy to give it a look and try to help out. Please include as much information as possible, including a link to your site where the problem can be seen.
 
 ### I'll need more help please!
 The plugin's own page can be found [here](http://www.senff.com/plugins/smooth-page-scroll-up-down-buttons).
 
-For any other issues, please use the [WordPress.org forum](https://wordpress.org/support/plugin/smooth-page-scroll-up-down-buttons).
+For any other issues, please use the [WordPress.org forum](https://wordpress.org/support/plugin/smooth-page-scroll-updown-buttons).
 
 
 ## Screenshots

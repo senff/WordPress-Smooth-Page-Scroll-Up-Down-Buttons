@@ -38,10 +38,10 @@ if (!function_exists('load_page_scroll_buttons')) {
     function load_page_scroll_buttons() {
 
 		// Main jQuery plugin file 
-	    wp_register_script('pageScrollButtonsLib', plugins_url('/assets/js/smooth-page-scroll-up-down-buttons.js', __FILE__), array( 'jquery' ), '1.0');
+	    wp_register_script('pageScrollButtonsLib', plugins_url('/assets/js/smooth-page-scroll-updown-buttons.js', __FILE__), array( 'jquery' ), '1.0');
 	    wp_enqueue_script('pageScrollButtonsLib');
 
-		wp_register_style('pageScrollButtonsStyle', plugins_url('/assets/css/smooth-page-scroll-up-down-buttons.css', __FILE__) );
+		wp_register_style('pageScrollButtonsStyle', plugins_url('/assets/css/smooth-page-scroll-updown-buttons.css', __FILE__) );
 	    wp_enqueue_style('pageScrollButtonsStyle');
 
 		$options = get_option('page_scroll_buttons_options');
@@ -180,7 +180,7 @@ if (!function_exists('page_scroll_up_down_buttons_config_page')) {
 
 		<hr />
 
-		<p><a href="http://www.senff.com/plugins/smooth-page-scroll-up-down-buttons" target="_blank">Smooth Page Scroll Up/Down Buttons</a> version 1.0 by <a href="http://www.senff.com" target="_blank">Senff</a> &nbsp;/&nbsp; <a href="https://wordpress.org/support/plugin/smooth-page-scroll-up-down-buttons" target="_blank">Please Report Bugs</a> &nbsp;/&nbsp; Follow on Twitter: <a href="http://www.twitter.com/senff" target="_blank">@Senff</a> &nbsp;/&nbsp; <a href="http://www.senff.com/plugins/smooth-page-scroll-up-down-buttons" target="_blank">Detailed documentation</a> &nbsp;/&nbsp; <a href="http://www.cancer.ca" target="_blank">Donate</a></p>
+		<p><a href="http://www.senff.com/plugins/smooth-page-scroll-up-down-buttons" target="_blank">Smooth Page Scroll Up/Down Buttons</a> version 1.0 by <a href="http://www.senff.com" target="_blank">Senff</a> &nbsp;/&nbsp; <a href="https://wordpress.org/support/plugin/smooth-page-scroll-updown-buttons" target="_blank">Please Report Bugs</a> &nbsp;/&nbsp; Follow on Twitter: <a href="http://www.twitter.com/senff" target="_blank">@Senff</a> &nbsp;/&nbsp; <a href="http://www.senff.com/plugins/smooth-page-scroll-up-down-buttons" target="_blank">Detailed documentation</a> &nbsp;/&nbsp; <a href="http://www.cancer.ca" target="_blank">Donate</a></p>
 
 	</div>
 
@@ -245,10 +245,10 @@ if (!function_exists('page_scroll_script')) {
 			return;
 		}
 
-		wp_register_script('pageScrollButtonsAdmin', plugins_url('/assets/js/smooth-page-scroll-up-down-admin.js', __FILE__), array( 'jquery' ), '1.0');
+		wp_register_script('pageScrollButtonsAdmin', plugins_url('/assets/js/smooth-page-scroll-updown-admin.js', __FILE__), array( 'jquery' ), '1.0');
 		wp_enqueue_script('pageScrollButtonsAdmin');
 
-		wp_register_style('pageScrollButtonsAdminStyle', plugins_url('/assets/css/smooth-page-scroll-up-down-admin.css', __FILE__) );
+		wp_register_style('pageScrollButtonsAdminStyle', plugins_url('/assets/css/smooth-page-scroll-updown-admin.css', __FILE__) );
 	    wp_enqueue_style('pageScrollButtonsAdminStyle');		
 	}
 }
