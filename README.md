@@ -1,15 +1,15 @@
 # Smooth Page Scroll Up/Down Buttons
 * Contributors: senff
-* Donate link: http://www.cancer.ca
-* Tags: plugin, smooth, scroll, buttons, top
-* Plugin URI: http://www.senff.com/plugins/smooth-page-scroll-up-down-buttons
+* Donate link: http://donate.senff.com
+* Tags: smooth scroll, buttons, page, top
+* Plugin URI: https://wordpress.org/plugins/smooth-page-scroll-updown-buttons
 * Requires at least: 3.8
-* Tested up to: 4.0
-* Stable tag: 1.0
-* License: GPLv2 or later
-* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Tested up to: 6.2
+* Stable tag: 1.4.1
+* License: GPLv3
+* License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Smooth Page Scroll Up/Down Buttons adds buttons that enables your site visitors to easily scroll up or down one screen/page at a time.
+Smooth Scroll Page Up/Down Buttons adds buttons that enables your site visitors to easily scroll up or down one screen/page at a time.
 
 ## Description
 
@@ -24,6 +24,8 @@ No knowledge of any coding (HTML, CSS, JavaScript, PHP) is required at all.
 ### Features
 
 * **Button positioning**: choose between three options of where you want the buttons to appear -- next to eachother at the bottom right, on top of eachother at the bottom right, or one at the top right and the other at the bottom right.
+* **Scrolling distance**: scroll a full page with each click, half a page, or however far you want.
+* **Button size**: choose the size of the buttons.
 * **Scrolling speed**: set the speed at which pages should scroll from one page to another.
 * **'Back to top' button**: optionally, include an additional button that takes the user back to the very top of the page.
 
@@ -31,23 +33,21 @@ No knowledge of any coding (HTML, CSS, JavaScript, PHP) is required at all.
 
 1. Upload the "smooth-page-scroll-updown-buttons" directory to your "wp-content/plugins" directory.
 2. In your WordPress admin, go to PLUGINS and activate "Smooth Page Scroll Up/Down Buttons"
-3. Go to SETTINGS - SMOOTH PAGE SCROLL UP/DOWN BUTTONS
+3. Go to SETTINGS - SMOOTH SCROLL PAGE UP/DOWN BUTTONS
 4. Choose the layout (where you want the buttons to appear) and the scroll speed
 
 ## Frequently Asked Questions
 
 ### Is it possible to use different buttons/arrows?
-The plugin comes with only one set of buttons. A future version may include more buttons, and/or the option to upload your own button graphics.
+Currently, the only thing you can change about the buttons, is their SIZE and POSITIONING (using any of the 4 layout templates). A future version may include more buttons, and/or the option to upload your own button graphics or point to your own uploaded images. 
 
-### Is it possible to use another layout/positioning than the 3 options I get?
-From my own experience, the three options you have are the most common ones that people use. If, however, there is another layout that you think could be useful, please let me know and I might add it in a future update.
+### Is it possible to use another layout/positioning than the 4 options I get?
+From my own experience, the four options you have are the most common ones that people use. If, however, there is another layout that you think could be useful, please let me know and I might add it in a future update.
 
 ### It's not working. What could be wrong?
 As with every plugin, it's possible that things don't work. The most common reason for this is that the plugin has a conflict with another plugin you're using. It's impossible to tell what could be wrong exactly, but if you post a support request in the plugin's [support forum](https://wordpress.org/support/plugin/smooth-page-scroll-updown-buttons) on WordPress.org, I'd be happy to give it a look and try to help out. Please include as much information as possible, including a link to your site where the problem can be seen.
 
 ### I'll need more help please!
-The plugin's own page can be found [here](http://www.senff.com/plugins/smooth-page-scroll-up-down-buttons).
-
 For any other issues, please use the [WordPress.org forum](https://wordpress.org/support/plugin/smooth-page-scroll-updown-buttons).
 
 
@@ -60,11 +60,47 @@ For any other issues, please use the [WordPress.org forum](https://wordpress.org
 
 ## Changelog
 
+### 1.4.1
+* Compatibility update.
+
+### 1.4 
+* Fixed security issues.
+
+### 1.3
+* Added option to resize buttons.
+
+### 1.2.1
+* Removed restriction to not scroll more than 100%.
+
+### 1.2 
+* Adding option to control how far the page scrolls with a click.
+
+### 1.1 
+* Adding additional setting for button placement: bottom center.
+
 ### 1.0 
 * Initial release.
 
 
 ## Upgrade Notice 
+
+### 1.4.1
+Compatibility update.
+
+### 1.4 
+Security update.
+
+### 1.3
+Added option to resize buttons.
+
+### 1.2.1
+Minor update.
+
+### 1.2
+Adding option to control how far the page scrolls with a click.
+
+### 1.1 
+Adding additional setting for button placement: bottom center.
 
 ### 1.0 
 Initial release of the plugin.
