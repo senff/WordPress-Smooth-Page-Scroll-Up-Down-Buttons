@@ -5,7 +5,10 @@ Plugin URI: https://wordpress.org/plugins/smooth-page-scroll-updown-buttons
 Description: Adds buttons to your page that will enable the user to easily (and smoothly) scroll one screen up/down.
 Author: Senff
 Author URI: http://www.senff.com
-Version: 1.4.1
+Version: 1.4.2
+License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: smooth-page-scroll-updown-buttons
 */
 
 defined('ABSPATH') or die('READY PLAYER ONE');
@@ -56,10 +59,10 @@ if (!function_exists('load_page_scroll_buttons')) {
     function load_page_scroll_buttons() {
 
 		// Main jQuery plugin file 
-	    wp_register_script('pageScrollButtonsLib', plugins_url('/assets/js/smooth-page-scroll-updown-buttons.min.js', __FILE__), array( 'jquery' ), '1.4');
+	    wp_register_script('pageScrollButtonsLib', plugins_url('/assets/js/smooth-page-scroll-updown-buttons.min.js', __FILE__), array( 'jquery' ), '1.4.2', array( 'in_footer' => true ));
 	    wp_enqueue_script('pageScrollButtonsLib');
 
-		wp_register_style('pageScrollButtonsStyle', plugins_url('/assets/css/smooth-page-scroll-updown-buttons.css', __FILE__) );
+		wp_register_style('pageScrollButtonsStyle', plugins_url('/assets/css/smooth-page-scroll-updown-buttons.css', __FILE__),'', '1.4.2' );
 	    wp_enqueue_style('pageScrollButtonsStyle');
 
 		$options = get_option('page_scroll_buttons_options');
@@ -93,7 +96,7 @@ if (!function_exists('load_page_scroll_buttons')) {
 		      'speed' => $options['psb_speed']
 		);
 
-		wp_enqueue_script('addButtons', plugins_url('/assets/js/addButtons.js', __FILE__), array( 'jquery' ), '1.4');
+		wp_enqueue_script('addButtons', plugins_url('/assets/js/addButtons.js', __FILE__), array( 'jquery' ), '1.4.2', array( 'in_footer' => true ));
 		wp_localize_script( 'addButtons', 'add_buttons_engage', $script_vars );
 
     }
@@ -121,9 +124,9 @@ if (!function_exists('page_scroll_up_down_buttons_config_page')) {
 	?>
 
 	<div id="page-scroll-up-down-buttons-settings-general" class="wrap">
-		<h2>Smooth Scroll Page Up/Down Buttons Settings</h2>
+		<h2><?php esc_html_e('Smooth Scroll Page Up/Down Buttons Settings', 'smooth-page-scroll-updown-buttons'); ?></h2>
 
-		<p>Adding UP/DOWN buttons will enable visitors of your site to scroll smoothly, scrolling one page at a time. Handy for pages with a lot of text/content, or wherever a browser's scrollbar is just not good enough (or not present at all, like on tablets) to go up or down exactly one page/screen.</p>
+		<p><?php esc_html_e('Adding UP/DOWN buttons will enable visitors of your site to scroll smoothly, scrolling one page at a time. Handy for pages with a lot of text/content, or wherever a browser\'s scrollbar is just not good enough (or not present at all, like on tablets) to go up or down exactly one page/screen.', 'smooth-page-scroll-updown-buttons'); ?></p>
 
 
 		<?php
@@ -132,11 +135,11 @@ if (!function_exists('page_scroll_up_down_buttons_config_page')) {
 
 			if ( isset( $_GET['message'] )) { 
 				if ($_GET['message'] == '1') {
-					echo '<div id="message" class="fade updated"><p><strong>Settings Updated</strong></p></div>';
+					echo '<div id="message" class="fade updated"><p><strong>'.esc_html__('Settings updated.', 'smooth-page-scroll-updown-buttons').'</strong></p></div>';
 				}
 			} 
 
-			if ( (!is_numeric($page_scroll_buttons_options['psb_distance'])) && ($page_scroll_buttons_options['psb_distance'] != '')) {
+			if ( (!is_numeric($page_scroll_buttons_options['psb_distance'])) && ($page_scroll_buttons_options['psb_distance'] != '' ) || ($page_scroll_buttons_options['psb_distance'] == '')) {
 				// Distance is not empty and has bad value
 				$warnings = true;
 			}
@@ -158,25 +161,29 @@ if (!function_exists('page_scroll_up_down_buttons_config_page')) {
 
 			// IF THERE ARE ERRORS, SHOW THEM
 			if ( $warnings == true ) { 
-				echo '<div id="message" class="error"><p><strong>Error! Please review the current settings:</strong></p>';
+				echo '<div id="message" class="error"><p><strong>'.esc_html__('Error! Please review the current settings:', 'smooth-page-scroll-updown-buttons').'</strong></p>';
 				echo '<ul style="list-style-type:disc; margin:0 0 20px 24px;">';
 
 				if ( (!is_numeric($page_scroll_buttons_options['psb_distance'])) && ($page_scroll_buttons_options['psb_distance'] != '')) {
-					echo '<li><strong>SCROLLING DISTANCE</strong> has to be a number (do not include "%" or "px", or any other characters).</li>';
+					echo '<li><strong>'.esc_html__('SCROLLING DISTANCE', 'smooth-page-scroll-updown-buttons').'</strong> '.esc_html__('has to be a number (do not include "%" or "px", or any other characters).', 'smooth-page-scroll-updown-buttons').'</li>';
 				}
 
+				if ($page_scroll_buttons_options['psb_distance'] == '') {
+					echo '<li><strong>'.esc_html__('SCROLLING DISTANCE', 'smooth-page-scroll-updown-buttons').'</strong> '.esc_html__('is required.', 'smooth-page-scroll-updown-buttons').'</li>';
+				}				
+
 				if ( (!is_numeric($page_scroll_buttons_options['psb_buttonsize'])) && ($page_scroll_buttons_options['psb_buttonsize'] != '')) {
-					echo '<li><strong>BUTTON SIZE</strong> has to be a number (do not include "%" or "px", or any other characters).</li>';
+					echo '<li><strong>'.esc_html__('BUTTON SIZE', 'smooth-page-scroll-updown-buttons').'</strong> '.esc_html__('has to be a number (do not include "%" or "px", or any other characters).', 'smooth-page-scroll-updown-buttons').'</li>';
 				} 
 
 				if ($page_scroll_buttons_options['psb_speed'] == '') {
-					echo '<li><strong>SCROLLING SPEED</strong> is required.</li>';
+					echo '<li><strong>'.esc_html__('SCROLLING SPEED', 'smooth-page-scroll-updown-buttons').'</strong> '.esc_html__('is required.', 'smooth-page-scroll-updown-buttons').'</li>';
 				} else {
 
 					if ( (!is_numeric($page_scroll_buttons_options['psb_speed'])) && ($page_scroll_buttons_options['psb_speed'] != '')) {
-						echo '<li><strong>SCROLLING SPEED</strong> has to be a number (do not include "ms" or "seconds", or any other characters).</li>';
+						echo '<li><strong>'.esc_html__('SCROLLING SPEED', 'smooth-page-scroll-updown-buttons').'</strong> '.esc_html__('has to be a number (do not include "ms" or "seconds", or any other characters).', 'smooth-page-scroll-updown-buttons').'</li>';
 					} elseif ($page_scroll_buttons_options['psb_speed'] < 1) {
-						echo '<li><strong>SCROLLING SPEED</strong> has to be larger than 0.</li>';
+						echo '<li><strong>'.esc_html__('SCROLLING SPEED', 'smooth-page-scroll-updown-buttons').'</strong> '.esc_html__('has to be larger than 0.', 'smooth-page-scroll-updown-buttons').'</li>';
 					}
  
 				}
@@ -199,7 +206,7 @@ if (!function_exists('page_scroll_up_down_buttons_config_page')) {
 						<table class="form-table">
 
 							<tr>
-								<th scope="row">Include 'back to top' button: <a href="#" title="If you want an additional button that scrolls all the way to the top of the page, check this box." class="help">?</a></th>
+								<th scope="row"><?php esc_html_e('Include \'back to top\' button:', 'smooth-page-scroll-updown-buttons'); ?> <a href="#" title="<?php esc_attr_e('If you want an additional button that scrolls all the way to the top of the page, check this box.', 'smooth-page-scroll-updown-buttons'); ?>" class="help">?</a></th>
 								<td>
 									<input type="checkbox" id="psb_topbutton" name="psb_topbutton" <?php if ($page_scroll_buttons_options['psb_topbutton'] ) echo ' checked="checked" ';?> />
 									<label for="psb_topbutton"></label>
@@ -207,7 +214,7 @@ if (!function_exists('page_scroll_up_down_buttons_config_page')) {
 							</tr>
 
 							<tr>
-								<th scope="row">Positioning <a href="#" title="Choose where you want your up/down buttons to be positioned." class="help">?</a></th>
+								<th scope="row"><?php esc_html_e('Positioning', 'smooth-page-scroll-updown-buttons'); ?> <a href="#" title="<?php esc_attr_e('Choose where you want your up/down buttons to be positioned.', 'smooth-page-scroll-updown-buttons'); ?>" class="help">?</a></th>
 								<td class="positioning-buttons">
 									<?php $psb_positioning = ( isset( $page_scroll_buttons_options['psb_positioning'] ) ) ? $page_scroll_buttons_options['psb_positioning'] : ''; ?>
 									<div class="positioning-option"><input type="radio" id="psb_positioning_0" name="psb_positioning" value="0" <?php if (esc_attr( $psb_positioning ) == 0) {echo 'checked';} ?>><label id="pos-0" for="psb_positioning_0"></label></div>
@@ -218,7 +225,7 @@ if (!function_exists('page_scroll_up_down_buttons_config_page')) {
 							</tr>
 
 							<tr>
-								<th scope="row">Scrolling distance <a href="#" title="How far the page scrolls when you click on a button" class="help">?</a></th>
+								<th scope="row"><?php esc_html_e('Scrolling Distance', 'smooth-page-scroll-updown-buttons'); ?> <a href="#" title="<?php esc_attr_e('How far the page scrolls when you click on a button.', 'smooth-page-scroll-updown-buttons'); ?>" class="help">?</a></th>
 								<td>
 									<?php $psb_distance = ( isset( $page_scroll_buttons_options['psb_distance'] ) ) ? $page_scroll_buttons_options['psb_distance'] : ''; ?>
 									<input type="number" min="1" id="psb_distance" name="psb_distance" value="<?php echo esc_attr( $psb_distance ); ?>" style="width:80px;" /> % &nbsp;&nbsp;&nbsp;(<em>100% = full page/screen, 50% = half screen, etc.</em>)
@@ -226,7 +233,7 @@ if (!function_exists('page_scroll_up_down_buttons_config_page')) {
 							</tr>
 
 							<tr>
-								<th scope="row">Button size <a href="#" title="How large the arrow buttons should be" class="help">?</a></th>
+								<th scope="row"><?php esc_html_e('Button Size', 'smooth-page-scroll-updown-buttons'); ?> <a href="#" title="<?php esc_attr_e('How large the arrow buttons should be.', 'smooth-page-scroll-updown-buttons'); ?>" class="help">?</a></th>
 								<td>
 									<?php $psb_buttonsize = ( isset( $page_scroll_buttons_options['psb_buttonsize'] ) ) ? $page_scroll_buttons_options['psb_buttonsize'] : ''; ?>
 									<input type="number" min="1" id="psb_buttonsize" name="psb_buttonsize" value="<?php echo esc_attr( $psb_buttonsize ); ?>" style="width:80px;" /> pixels square<br />
@@ -235,7 +242,7 @@ if (!function_exists('page_scroll_up_down_buttons_config_page')) {
 							</tr>
 
 							<tr>
-								<th scope="row">Scrolling speed <a href="#" title="The speed at which the page scrolls when you click on a button (set to 1 for no visible scrolling)." class="help">?</a></th>
+								<th scope="row"><?php esc_html_e('Scrolling Speed', 'smooth-page-scroll-updown-buttons'); ?> <a href="#" title="<?php esc_attr_e('The speed at which the page scrolls when you click on a button (set to 1 for no visible scrolling).', 'smooth-page-scroll-updown-buttons'); ?>" class="help">?</a></th>
 								<td>
 									<?php $psb_speed = ( isset( $page_scroll_buttons_options['psb_speed'] ) ) ? $page_scroll_buttons_options['psb_speed'] : ''; ?>
 									<input type="number" min="1" id="psb_speed" name="psb_speed" value="<?php echo esc_attr( $psb_speed ); ?>" style="width:80px;" /> milliseconds &nbsp;&nbsp;&nbsp;(<em>1 second = 1000 milliseconds</em>)
@@ -244,7 +251,7 @@ if (!function_exists('page_scroll_up_down_buttons_config_page')) {
 
 						</table>
 
-						<input type="submit" value="SAVE SETTINGS" class="button-primary"/>
+						<input type="submit" value="<?php esc_attr_e('Save Settings', 'smooth-page-scroll-updown-buttons'); ?>" class="button-primary"/>
 
 						<p>&nbsp;</p>
 					</form>
@@ -255,7 +262,7 @@ if (!function_exists('page_scroll_up_down_buttons_config_page')) {
 
 		<hr />
 
-		<p><strong>Smooth Page Scroll Up/Down Buttons</strong> version 1.4 by <a href="http://www.senff.com" target="_blank">Senff</a> &nbsp;/&nbsp; <a href="https://wordpress.org/support/plugin/smooth-page-scroll-updown-buttons" target="_blank">Please Report Bugs</a> &nbsp;/&nbsp; Follow on Twitter: <a href="http://www.twitter.com/senff" target="_blank">@Senff</a> &nbsp;/&nbsp; <a href="http://www.senff.com/plugins/smooth-page-scroll-up-down-buttons" target="_blank">Detailed documentation</a> &nbsp;/&nbsp; <a href="http://www.senff.com/donate" target="_blank">Donate</a></p>
+		<p><strong><?php esc_html_e('Smooth Page Scroll Up/Down Buttons', 'smooth-page-scroll-updown-buttons'); ?></strong> version 1.4 by <a href="http://www.senff.com" target="_blank">Senff</a> &nbsp;/&nbsp; <a href="https://wordpress.org/support/plugin/smooth-page-scroll-updown-buttons" target="_blank"><?php esc_html_e('Please report bugs', 'smooth-page-scroll-updown-buttons'); ?></a> &nbsp;/&nbsp; <?php esc_html_e('Follow on Bluesky', 'smooth-page-scroll-updown-buttons'); ?> <a href="https://bsky.app/profile/senff.com" target="_blank">@senff.com</a> &nbsp;/&nbsp; <a href="https://github.com/senff/WordPress-Smooth-Page-Scroll-Up-Down-Buttons" target="_blank"><?php esc_html_e('Detailed documentation', 'smooth-page-scroll-updown-buttons'); ?></a> &nbsp;/&nbsp; <a href="http://www.senff.com/donate" target="_blank"><?php esc_html_e('Donate', 'smooth-page-scroll-updown-buttons'); ?></a></p>
 
 	</div>
 
@@ -282,7 +289,7 @@ if (!function_exists('process_page_scroll_buttons_options')) {
 
 		foreach ( array('psb_positioning') as $option_name ) {
 			if ( isset( $_POST[$option_name] ) ) {
-				$options[$option_name] = sanitize_text_field( $_POST[$option_name] );
+				$options[$option_name] = sanitize_text_field(wp_unslash($_POST[$option_name] ));
 			} 
 		}
 
@@ -296,19 +303,19 @@ if (!function_exists('process_page_scroll_buttons_options')) {
 
 		foreach ( array('psb_distance') as $option_name ) {
 			if ( isset( $_POST[$option_name] ) ) {
-				$options[$option_name] = sanitize_text_field( $_POST[$option_name] );
+				$options[$option_name] = sanitize_text_field( wp_unslash($_POST[$option_name] ));
 			} 
 		}
 
 		foreach ( array('psb_buttonsize') as $option_name ) {
 			if ( isset( $_POST[$option_name] ) ) {
-				$options[$option_name] = sanitize_text_field( $_POST[$option_name] );
+				$options[$option_name] = sanitize_text_field( wp_unslash($_POST[$option_name] ));
 			} 
 		}
 
 		foreach ( array('psb_speed') as $option_name ) {
 			if ( isset( $_POST[$option_name] ) ) {
-				$options[$option_name] = sanitize_text_field( $_POST[$option_name] );
+				$options[$option_name] = sanitize_text_field( wp_unslash($_POST[$option_name] ));
 			} 
 		}
 
@@ -332,10 +339,10 @@ if (!function_exists('page_scroll_script')) {
 			return;
 		}
 
-		wp_register_script('pageScrollButtonsAdmin', plugins_url('/assets/js/smooth-page-scroll-updown-admin.js', __FILE__), array( 'jquery' ), '1.4');
+		wp_register_script('pageScrollButtonsAdmin', plugins_url('/assets/js/smooth-page-scroll-updown-admin.js', __FILE__), array( 'jquery' ), '1.4.2', array( 'in_footer' => true ));
 		wp_enqueue_script('pageScrollButtonsAdmin');
 
-		wp_register_style('pageScrollButtonsAdminStyle', plugins_url('/assets/css/smooth-page-scroll-updown-admin.css', __FILE__) );
+		wp_register_style('pageScrollButtonsAdminStyle', plugins_url('/assets/css/smooth-page-scroll-updown-admin.css', __FILE__),'', '1.4.2' );
 	    wp_enqueue_style('pageScrollButtonsAdminStyle');		
 	}
 }

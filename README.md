@@ -4,8 +4,8 @@
 * Tags: smooth scroll, buttons, page, top
 * Plugin URI: https://wordpress.org/plugins/smooth-page-scroll-updown-buttons
 * Requires at least: 3.8
-* Tested up to: 6.2
-* Stable tag: 1.4.1
+* Tested up to: 6.7
+* Stable tag: 1.4.2
 * License: GPLv3
 * License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -60,6 +60,9 @@ For any other issues, please use the [WordPress.org forum](https://wordpress.org
 
 ## Changelog
 
+### 1.4.2
+* Adjusted some code to better adhere to plugin standards.
+
 ### 1.4.1
 * Compatibility update.
 
@@ -83,6 +86,9 @@ For any other issues, please use the [WordPress.org forum](https://wordpress.org
 
 
 ## Upgrade Notice 
+
+### 1.4.2
+* Code updates
 
 ### 1.4.1
 Compatibility update.
